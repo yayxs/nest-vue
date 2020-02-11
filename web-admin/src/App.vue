@@ -4,13 +4,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'app',
+
+@Component({
   components: {
   },
-};
+})
+export default class App extends Vue {}
 </script>
 
 <style>

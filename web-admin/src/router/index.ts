@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import constRoutes from './constRoutes';
+import constRoutes from '@/router/constRoutes.ts';
 
 Vue.use(Router);
 

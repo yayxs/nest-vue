@@ -6,7 +6,7 @@ import Layout from '../layout/index.vue';
 const constRoutes = [
   {
     path: '/login',
-    component: () => import('@/views/login/Login'),
+    component: () => import('@/views/login/Login.vue'),
     hidden: true, // 导航菜单忽略该项
   },
   {
