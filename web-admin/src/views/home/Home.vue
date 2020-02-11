@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <svg-icon icon-class="blog"></svg-icon>
+   3233333333
   </div>
 </template>
 

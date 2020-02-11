@@ -12,7 +12,7 @@ const asyncRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/About.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/about/About.vue'),
         name: 'about',
         meta: {
           title: 'About',
@@ -22,7 +22,7 @@ const asyncRoutes = [
       },
       {
         path: 'bla',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/About.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/about/About.vue'),
         name: 'bla',
         meta: {
           title: 'About',

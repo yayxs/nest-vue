@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-      登录页
+      <el-button>anniu</el-button>
   </div>
 </template>
 

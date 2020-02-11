@@ -17,7 +17,7 @@ const constRoutes = [
     children: [
       {
         path: 'home',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/home/Home.vue'),
         name: 'home',
         meta: {
           title: 'Home', // 导航菜单项标题
@@ -26,7 +26,7 @@ const constRoutes = [
       },
       {
         path: 'mua',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/home/Home.vue'),
         name: 'mua',
         meta: {
           title: '波一个', // 导航菜单项标题
