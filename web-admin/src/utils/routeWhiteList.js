@@ -1,4 +1,4 @@
 // / 路由白名单
-const routeWhiteList = [];
+const routeWhiteList = ['/login'];
 
 export default routeWhiteList;

@@ -9,7 +9,7 @@ import { Route } from 'vue-router';
 import router from './router';
 import store from './store';
 
-const whiteList = ['/login']; // 无需令牌白名单
+// const whiteList = ['/login']; // 无需令牌白名单
 // 注册全局前置守卫
 router.beforeEach(async (to:Route, from:Route, next:Function) => {
   // 获取令牌判断用户是否登录
