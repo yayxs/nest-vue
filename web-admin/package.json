@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "ss": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "my-lint": "eslint --ext .js,.vue src --fix"
   },
   "dependencies": {
+    "@types/js-cookie": "^2.2.4",
     "core-js": "^3.6.4",
     "element-ui": "^2.4.5",
+    "js-cookie": "^2.2.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.2",
     "vue-property-decorator": "^8.3.0",
