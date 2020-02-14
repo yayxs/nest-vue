@@ -1,14 +1,16 @@
 /**
  * 路由常量，不需要权限
  */
-import Layout from '../layout/index.vue';
+import { RouteConfig } from 'vue-router';
+import Layout from '../layout/layout.vue';
 
-const constRoutes = [
+const constRoutes: RouteConfig[] = [
+  // 登录
   {
     path: '/login',
     component: () => import('@/views/login/Login.vue'),
-    hidden: true, // 导航菜单忽略该项
   },
+  // 其他
   {
     path: '/',
     component: Layout, // 应用布局
@@ -22,15 +24,6 @@ const constRoutes = [
         meta: {
           title: 'Home', // 导航菜单项标题
           icon: 'qq', // 导航菜单项图标
-        },
-      },
-      {
-        path: 'mua',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/home/Home.vue'),
-        name: 'mua',
-        meta: {
-          title: '波一个', // 导航菜单项标题
-          icon: 'wx', // 导航菜单项图标
         },
       },
     ],
