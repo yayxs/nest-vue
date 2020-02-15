@@ -12,8 +12,11 @@ export class User {
   @ApiProperty({ description: '用户名' })
   @prop()
   username: string;
+
+
   @ApiProperty({ description: '密码' })
   @prop({
+    select:false, // 查询时不展示
     get(val){
       return val
     },
