@@ -6,7 +6,7 @@
     "ss": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "my-lint": "eslint --ext .js,.vue src --fix"
+    "ll": "eslint --ext .js,.vue src --fix"
   },
   "dependencies": {
     "@types/js-cookie": "^2.2.4",
@@ -35,6 +35,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-vue": "^6.1.2",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "svg-sprite-loader": "^4.2.1",
     "typescript": "~3.7.5",
     "vue-cli-plugin-element": "~1.0.1",
