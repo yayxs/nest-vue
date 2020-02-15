@@ -1,5 +1,6 @@
 /**
  * 路由常量，不需要权限
+ * 登录和首页
  */
 import { RouteConfig } from 'vue-router';
 import Layout from '../layout/layout.vue';

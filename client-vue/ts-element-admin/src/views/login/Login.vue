@@ -31,7 +31,15 @@ export default class Login extends Vue {
   // methods
   // eslint-disable-next-line class-methods-use-this
   private onSubmit(): void {
-    console.log(this.loginFormData);
+    console.log('执行登录操作');
+    // 派发登录动作
+    this.$store.dispatch('user/login', { username: this.loginFormData.username, password: this.loginFormData.password }).then(() => {
+      // 跳转页面
+      console.log(this.$route.query);
+      this.$router.push({
+        path: '/',
+      });
+    }).catch((err) => console.log(err));
   }
 }
 </script>

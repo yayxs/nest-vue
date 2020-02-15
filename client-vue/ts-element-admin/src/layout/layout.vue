@@ -30,7 +30,7 @@
         <el-main height="">
           <!-- Main content -->
           <section>
-            主要内容
+           <router-view></router-view>
           </section>
         </el-main>
       </el-container>

@@ -1,33 +1,32 @@
 /**
  * 权限页面
  */
-import Layout from '../layout/index.vue';
+import Layout from '../layout/layout.vue';
 
 const asyncRoutes = [
   {
-    path: '/about',
+    path: '/user',
     component: Layout,
-    redirect: '/about/index',
-
+    redirect: '/user/index',
     children: [
       {
         path: 'index',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/about/About.vue'),
-        name: 'about',
+        component: () => import(/* webpackChunkName: "user" */ '@/views/user/User.vue'),
+        name: 'user',
         meta: {
-          title: 'About',
+          title: 'user',
           icon: 'qq',
-          roles: ['editor'],
+          roles: ['admin'],
         },
       },
       {
-        path: 'bla',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/about/About.vue'),
-        name: 'bla',
+        path: 'other',
+        component: () => import(/* webpackChunkName: "other" */ '@/views/other/Other.vue'),
+        name: 'other',
         meta: {
-          title: 'About',
+          title: 'Other',
           icon: 'qq',
-          roles: ['admin'],
+          roles: ['user'],
         },
       },
     ],

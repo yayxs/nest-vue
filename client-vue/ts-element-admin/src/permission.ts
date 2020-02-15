@@ -1,8 +1,7 @@
 /**
- * 全局路由守卫
+ * 全局路由守卫 权限控制逻辑在这里
  */
-// 路由全局守卫
-// 权限控制逻辑在这里
+
 import { Message } from 'element-ui';
 import { getToken } from '@/utils/auth'; // 从cookie获取令牌
 import { Route } from 'vue-router';
