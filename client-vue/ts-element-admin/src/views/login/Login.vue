@@ -18,10 +18,12 @@
 </template>
 
 <script lang="ts">
+// import rulesMxins from '@/mixins/rulesMxins';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class Login extends Vue {
+  // mixin
   // initial data
   private loginFormData = {
     username: '',
