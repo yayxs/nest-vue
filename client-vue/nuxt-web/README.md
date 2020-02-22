@@ -1,6 +1,6 @@
-# nuxt-web-app
+# nuxt-web
 
-> My priceless Nuxt.js project
+> a web pro by nuxt.js
 
 ## Build Setup
 

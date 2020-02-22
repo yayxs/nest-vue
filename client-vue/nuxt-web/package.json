@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-web-app",
+  "name": "nuxt-web",
   "version": "1.0.0",
-  "description": "My priceless Nuxt.js project",
+  "description": "a web pro by nuxt.js",
   "author": "yayxs",
   "private": true,
   "scripts": {
@@ -22,9 +22,6 @@
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
+    "eslint-plugin-nuxt": ">=0.4.2"
   }
 }
