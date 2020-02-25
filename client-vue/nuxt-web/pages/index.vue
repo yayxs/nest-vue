@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     async getData () {
-      const res = await this.$axios.get('v1/api/demoinfo')
+      const res = await this.$http.get('/demoinfo')
       global.console.log(res)
     }
   }

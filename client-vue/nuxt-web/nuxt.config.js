@@ -17,7 +17,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
+
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -30,7 +37,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '@/plugins/axios'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -94,5 +103,8 @@ export default {
      ** You can extend webpack config here
      */
     extend (config, ctx) {}
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   }
 }

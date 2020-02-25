@@ -1,13 +1,15 @@
 'use strict';
 
-const Controller = require('egg').Controller;
+const Controller = require('./base');
 
 class UserController extends Controller {
-  async demoinfo() {
-    const { ctx } = this;
-    ctx.body = {
-      code: 0,
-    };
+  // async demoinfo() {
+  //   // const { ctx } = this;
+  //   this.success('success');
+  // }
+
+  async sendEmailCode() {
+    console.log('11');
   }
 }
 
