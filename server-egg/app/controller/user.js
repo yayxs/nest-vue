@@ -3,13 +3,10 @@
 const Controller = require('./base');
 
 class UserController extends Controller {
-  // async demoinfo() {
-  //   // const { ctx } = this;
-  //   this.success('success');
-  // }
 
-  async sendEmailCode() {
-    console.log('11');
+  async email() {
+    const { ctx } = this;
+    console.log(ctx);
   }
 }
 

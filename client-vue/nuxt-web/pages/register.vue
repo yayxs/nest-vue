@@ -1,67 +1,87 @@
 <template>
   <v-app id="inspire">
-    <v-form
-      ref="form"
-      v-model="valid"
-      lazy-validation
+    <v-row
+      align="center"
+      justify="center"
     >
-      <v-text-field
-        v-model="name"
-        :counter="10"
-        :rules="nameRules"
-        label="昵称"
-        required
-      />
+      <v-card
 
-      <v-text-field
-        v-model="email"
-        :rules="emailRules"
-        label="邮箱"
-        required
-      />
-      <v-text-field
-        v-model="emailCode"
-
-        label="邮箱验证码"
-        required
-      />
-      <v-btn
-        color="warning"
-        @click="sendVerificationCode"
+        class="mx-auto"
+        width="500"
+        height="400"
       >
-        发送邮箱验证码
-      </v-btn>
-      <v-checkbox
-        v-model="checkbox"
-        :rules="[v => !!v || 'You must agree to continue!']"
-        label="你是否同意?"
-        required
-      />
+        <v-form
+          ref="form"
+          v-model="valid"
+          lazy-validation
+        >
+          <v-text-field
+            v-model="name"
+            :counter="10"
+            :rules="nameRules"
+            label="昵称"
+            required
+          />
+          <!-- 邮箱 -->
+          <v-text-field
+            v-model="email"
+            :rules="emailRules"
+            label="邮箱"
+            required
+          />
+          <v-text-field
+            v-model="emailCode"
 
-      <v-btn
-        :disabled="!valid"
-        color="success"
-        class="mr-4"
-        @click="validate"
-      >
-        Validate
-      </v-btn>
+            label="邮箱验证码"
+            required
+          />
+          <v-btn
+            color="warning"
+            @click="sendVerificationCode"
+          >
+            发送邮箱验证码
+          </v-btn>
+          <v-checkbox
+            v-model="checkbox"
+            :rules="[v => !!v || 'You must agree to continue!']"
+            label="你是否同意?"
+            required
+          />
 
-      <v-btn
-        color="error"
-        class="mr-4"
-        @click="reset"
-      >
-        Reset Form
-      </v-btn>
+          <v-btn
+            :disabled="!valid"
+            color="success"
+            class="mr-4"
+            @click="validate"
+          >
+            验证
+          </v-btn>
 
-      <v-btn
-        color="warning"
-        @click="resetValidation"
-      >
-        Reset Validation
-      </v-btn>
-    </v-form>
+          <v-btn
+            color="error"
+            class="mr-4"
+            @click="reset"
+          >
+            重置表单
+          </v-btn>
+
+          <v-btn
+            color="warning"
+            @click="resetValidation"
+          >
+            重置验证
+          </v-btn>
+
+          <v-btn
+            color="warning"
+            @click="resetValidation"
+          >
+            注册
+          </v-btn>
+        </v-form>
+      </v-card>
+    </v-row>
+    <!-- 注册卡片 -->
   </v-app>
 </template>
 
@@ -91,19 +111,24 @@ export default {
     checkbox: false
   }),
   methods: {
+    // 验证所有输入并返回所有输入是否有效
     validate () {
       if (this.$refs.form.validate()) {
         this.snackbar = true
       }
     },
+    // 清除所有输入并重置其验证错误
     reset () {
       this.$refs.form.reset()
     },
+    // 仅重置输入验证，而不会更改其状态
     resetValidation () {
       this.$refs.form.resetValidation()
     },
     // 发送验证码
-    async  sendVerificationCode () {
+    async sendVerificationCode () {
+      global.console.log('发送邮箱验证码')
+
       const res = await this.$http.post('/user/sendEmailCode', {
         email: this.email
       })
@@ -112,3 +137,6 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+
+</style>

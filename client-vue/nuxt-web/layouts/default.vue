@@ -107,7 +107,16 @@
         class="hidden-sm-and-down"
       />
       <v-spacer />
-
+      <div class="my-2">
+        <v-btn small class="primary">
+          登录
+        </v-btn>
+      </div>
+      <div class="my-2">
+        <v-btn small @click="handleRegister">
+          注册
+        </v-btn>
+      </div>
       <v-btn icon @click="handleToGH">
         <v-icon>fab fa-github</v-icon>
       </v-btn>
@@ -150,6 +159,12 @@ export default {
     handleToGH () {
       global.console.log('跳转到github')
       window.open('https://github.com/yayxs')
+    },
+    // 注册
+    handleRegister () {
+      // 跳转到注册页
+      global.console.log('跳转到注册页')
+      this.$router.push({ path: '/register' })
     }
   }
 }
