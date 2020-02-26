@@ -16,9 +16,9 @@
           lazy-validation
         >
           <v-text-field
-            v-model="name"
+            v-model="nickName"
             :counter="10"
-            :rules="nameRules"
+            :rules="nickNameRules"
             label="昵称"
             required
           />
@@ -41,6 +41,19 @@
           >
             发送邮箱验证码
           </v-btn>
+          <v-text-field
+            v-model="password"
+
+            label="密码"
+            required
+          />
+          <v-text-field
+            v-model="password2"
+
+            label="再次输入密码"
+            required
+          />
+
           <v-checkbox
             v-model="checkbox"
             :rules="[v => !!v || 'You must agree to continue!']"
@@ -73,8 +86,8 @@
           </v-btn>
 
           <v-btn
-            color="warning"
-            @click="resetValidation"
+            color="purple"
+            @click="handleRegister"
           >
             注册
           </v-btn>
@@ -86,16 +99,17 @@
 </template>
 
 <script>
+import md5 from 'md5'
 export default {
   layout: 'login',
   data: () => ({
     valid: true,
-    name: 'yayxs',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+    nickName: 'yayxs',
+    nickNameRules: [
+      v => !!v || 'nickName is required',
+      v => (v && v.length <= 10) || 'nickName must be less than 10 characters'
     ],
-    email: 'leaderywl@163.com',
+    email: '1372239884@qq.com',
     emailCode: '',
     emailRules: [
       v => !!v || 'E-mail is required',
@@ -108,7 +122,9 @@ export default {
       'Item 3',
       'Item 4'
     ],
-    checkbox: false
+    checkbox: false,
+    password: '123456',
+    password2: '123456'
   }),
   methods: {
     // 验证所有输入并返回所有输入是否有效
@@ -125,13 +141,27 @@ export default {
     resetValidation () {
       this.$refs.form.resetValidation()
     },
-    // 发送验证码
+    // 发送验证码 阿里人机验证
     async sendVerificationCode () {
       global.console.log('发送邮箱验证码')
-
-      const res = await this.$http.post('/user/sendEmailCode', {
+      const params = {
         email: this.email
-      })
+      }
+      const res = await this.$http.get('/user/sendEmailCode', params)
+      global.console.log(res)
+    },
+    // 注册
+    async handleRegister () {
+      global.console.log('注册')
+      const params = {
+        email: this.email,
+        password: md5(this.password),
+        emailCode: '1234',
+        captcha: 'abcd',
+        nickName: this.nickName
+      }
+
+      const res = await this.$http.post('/user/register', params)
       global.console.log(res)
     }
   }

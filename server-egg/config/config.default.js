@@ -38,5 +38,11 @@ module.exports = appInfo => {
   return {
     ...config,
     ...userConfig,
+
+    client: {
+      url: 'mongodb://127.0.0.1:27017/yayxs',
+      options: {},
+
+    },
   };
 };
