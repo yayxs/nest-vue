@@ -42,7 +42,7 @@ export class AuthController {
   @Get('user')
   @ApiBearerAuth()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async user(@CurrentUser() user: DocumentType<User>) {
-    return user;
+  async user(@Request() req) {
+    return req.user;
   }
 }
