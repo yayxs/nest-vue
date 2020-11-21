@@ -1,0 +1,33 @@
+// https://github.com/JowayYoung/idea-css/blob/master/css/reset.css
+a,
+body,
+button,
+div,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+p,
+span,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  input,
+  select,
+  textarea {
+    box-sizing: border-box;
+    // 去除外围的线
+    outline: none;
+  }
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
