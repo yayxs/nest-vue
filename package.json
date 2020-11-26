@@ -20,9 +20,6 @@
     "nuxt": "^2.14.7"
   },
   "devDependencies": {
-    "fibers": "^5.0.0",
-    "pug": "^3.0.0",
-    "pug-plain-loader": "^1.0.0",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0"
   }
